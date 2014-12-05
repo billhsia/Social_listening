@@ -5,13 +5,13 @@
 # See documentation in:
 # http://doc.scrapy.org/en/latest/topics/items.html
 
-import scrapy.item import Item, Field
+from scrapy.item import Item, Field
 
 
-class Mobile01Item(scrapy.Item):
+class Mobile01Item(Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    title = scrapy.Field()
-    author = scrapy.Field()
-    link = scrapy.Field()
-    content	= scrapy.Field()
+    title = Field()
+    author = Field()
+    link = Field()
+    content	= Field()

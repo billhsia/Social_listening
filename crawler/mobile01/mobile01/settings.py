@@ -7,11 +7,20 @@
 #
 #     http://doc.scrapy.org/en/latest/topics/settings.html
 #
+import os
+import sys
+
 
 BOT_NAME = 'mobile01'
 
 SPIDER_MODULES = ['mobile01.spiders']
-NEWSPIDER_MODULE = 'mobile01.spiders'
+NEWSPIDER_MODULE = 'mobile01'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'mobile01 (+http://www.yourdomain.com)'
+USER_AGENT = 'mobile01.comm <https://github.com/bryanyang0528>'
+DEPTH_LIMIT = 2
+DOWNLOAD_DELAY = 1
+
+FEED_EXPORTERS = {
+	'json': 'crawler_lib.misc.UnicodeJsonItemExporter'
+}
