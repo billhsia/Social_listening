@@ -24,3 +24,13 @@ DOWNLOAD_DELAY = 1
 FEED_EXPORTERS = {
 	'json': 'crawler_lib.misc.UnicodeJsonItemExporter'
 }
+
+DATABASE = {'drivername': 'postgres',
+			'host': 'localhost',
+			'port': '5432',
+			'username': 'bryanyang',
+			'password': 'root',
+			'database': 'social_listening'}
+
+ITEM_PIPELINES = ['mobile01.pipelines.Mobile01Pipeline']
+

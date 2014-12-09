@@ -15,3 +15,4 @@ class Mobile01Item(Item):
     author = Field()
     link = Field()
     content	= Field()
+    total = Field()
