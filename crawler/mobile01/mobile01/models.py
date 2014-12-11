@@ -3,13 +3,13 @@ from sqlalchemy.dialects.postgresql import JSON
 from sqlalchemy.orm import mapper
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.engine.url import URL
-
+from JSONUnicode import JSONUnicode
 import settings
 
 DeclarativeBase = declarative_base()
 
 def db_connect():
-	return create_engine(URL(**settings.DATABASE))
+	return create_engine(URL(**settings.DATABASE), client_encoding='utf-8')
 
 def create_deals_table(engine):
 	DeclarativeBase.metadata.create_all(engine)
@@ -17,7 +17,7 @@ def create_deals_table(engine):
 class Deals(DeclarativeBase):
 
 	__tablename__ = "deals"
-
+	
 	id = Column(Integer, primary_key = True)
 	title = Column('title', String, nullable=True)
 	author = Column('author', String, nullable=True)

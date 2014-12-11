@@ -10,6 +10,7 @@ from models import Deals, db_connect, create_deals_table
 
 class Mobile01Pipeline(object):
 
+# Get the session of the postgresDB
 	def __init__(self):
 		engine = db_connect()
 		create_deals_table(engine)
@@ -18,7 +19,6 @@ class Mobile01Pipeline(object):
 	def process_item(self, item, spider):
 		session = self.Session()
 		deal = Deals(**item)
-    	
 		try:
 			session.add(deal)
 			session.commit()
